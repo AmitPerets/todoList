@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
+const mongoose = require("mongoose");
+
+const TodoTask = require("./models/TodoTask");
 
 dotenv.config();
 
-const mongoose = require("mongoose");
 
 app.use("/static", express.static("public"));
 
@@ -22,11 +24,23 @@ mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true })
 app.set("view engine", "ejs");
 
 
-app.get('/', (req, res) => {
-    res.render('todo.ejs');
+app.get("/", async (req, res) => {
+  try {
+    const tasks = await TodoTask.find({});
+    res.render("todo.ejs", { todoTasks: tasks });
+  } catch (err) {
+    console.error(err);
+  }
 });
 
-app.post('/', (req, res) => {
-    console.log(req.body);
-});
-
+app.post('/',async (req, res) => {
+    const todoTask = new TodoTask({
+    content: req.body.content
+    });
+    try {
+    await todoTask.save();
+    res.redirect("/");
+    } catch (err) {
+    res.redirect("/");
+    }
+    });
