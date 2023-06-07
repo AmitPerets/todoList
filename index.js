@@ -33,20 +33,20 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.post('/',async (req, res) => {
-    const todoTask = new TodoTask({
+app.post('/', async (req, res) => {
+  const todoTask = new TodoTask({
     content: req.body.content
-    });
-    try {
+  });
+  try {
     await todoTask.save();
     res.redirect("/");
-    } catch (err) {
+  } catch (err) {
     res.redirect("/");
-    }
-    });
+  }
+});
 
 
- app.route("/edit/:id")
+app.route("/edit/:id")
   .get(async (req, res) => {
     try {
       const id = req.params.id;
@@ -69,17 +69,16 @@ app.post('/',async (req, res) => {
     }
   });
 
-  app.route("/remove/:id").get(async (req, res) => {
-    try {
-      const id = req.params.id;
-      await TodoTask.findByIdAndRemove(id);
-      res.redirect("/");
-    } catch (err) {
-      console.error(err);
-      // Handle the error
-      res.status(500).send(err);
-    }
-  });
-  
+app.route("/remove/:id").get(async (req, res) => {
+  try {
+    const id = req.params.id;
+    await TodoTask.findByIdAndRemove(id);
+    res.redirect("/");
+  } catch (err) {
+    console.error(err);
+    // Handle the error
+    res.status(500).send(err);
+  }
+});
 
-  
+
