@@ -1,30 +1,56 @@
 <head>
-    <title>Ninja List | Home</title>
-    <meta name="keywords" content="ninjas">
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Candal|Chewy&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-       integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/stylesheets/registration.css" type="text/css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Page</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
+  <title>Ninja List | Home</title>
+  <meta name="keywords" content="ninjas">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Candal|Chewy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/stylesheets/registration.css" type="text/css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
 </head>
 
 
 <body>
-    <div class="registration-container">
-      <h1>Registration Page</h1>
-      <h4>Please fill in your details:</h4>
-      <form class="registration-form">
-        <input type="text" placeholder="Username" required>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
-        <input type="password" placeholder="Confirm Password" required>
-        <button type="submit">Register</button>
-      </form>
-      <p>Already have an account? <a href="#">Login here</a></p>
-    </div>
-  </body>
-  
-  </html>
+  <div class="registration-container">
+    <h1>Registration Page</h1>
+    <h4>Please fill in your details:</h4>
+    <form class="registration-form" action="/users/register" method="POST">
+      <div class="inputspart">
+        <div class="form-group row">
+          <div class="col-sm-6 mb-3 mb-sm-0">
+            <label for="fullname">Full Name</label>
+            <input type="name" id="fullname" name="fullname" class="form-control form-control-user"
+              placeholder="Full Name" value="<%= typeof fullname != 'undefined' ? fullname : '' %>" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"
+            value="<%= typeof email != 'undefined' ? email : '' %>" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="form-control" placeholder="Create Password"
+            value="<%= typeof password != 'undefined' ? password : '' %>" />
+        </div>
+        <div class="form-group">
+          <label for="password2">Confirm Password</label>
+          <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password"
+            value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+        </div>
+      </div>
+      <br />
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary btn-block col-12">
+          Register
+        </button>
+      </div>
+    </form>
+    <p>Already have an account? <a href="#">Login here</a></p>
+  </div>
+</body>
+
+
+</html>
