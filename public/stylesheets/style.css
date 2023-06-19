@@ -1,105 +1,135 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    }
-    body {
-    background: #e27442;
-    }
-    .todo-container {
+    font-family: cursive;
+}
+
+body {
+    background-image: url('https://images.pexels.com/photos/733857/pexels-photo-733857.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100%; /* Adjust the percentage to your desired size */
+    background-position: center; /* Optional: Center the background image */
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.95;
+    
+}
+
+.todo-container {
     color: white;
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 50%;
     padding: 20px;
-    width: 600px;
-    transform: translate(-50%,-50%);
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+    width: 620px;
+    transform: translate(-50%, -50%);
+    background-color: #ccab99;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    }
-    .todo {
+}
+
+.todo {
     width: 400px;
-    }
-    .todo-container h2 {
+}
+
+.todo-container h2 {
     padding: 10px;
-    font-family: 'Candal', sans-serif;
-    font-size: 2em;
-    }
-    .todo-header input {
+    font-weight: bold;
+    font-size: 250%;
+    color: #3e403f;
+    margin-bottom: 5%;
+}
+
+.todo-container h3 {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 150%;
+    color: #3e403f;
+}
+
+.todo-header input {
     width: 92%;
     border: none;
     border-radius: 5px;
-    height: 20px;
-    font-family: 'Candal', sans-serif;
-    }
-    .todo-header button {
+    height: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.todo-header button {
     color: white;
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    padding: 5px;
-    font-family: 'Candal', sans-serif;
-    background-color: rgb(51, 212, 100);
-    }
-    .todo-container ul {
-    list-style: none;
-    }
-    .todo-list-item {
+    padding: 15px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #d56a0b;
+    position: fixed;
+}
+
+.todo-list-item {
     padding: 10px;
     margin-top: 10px;
     border: none;
     border-radius: 5px;
-    font-family: 'Candal', sans-serif;
-    background: rgba(0, 0, 0, 0.3);
+    font-family: 'Montserrat', sans-serif;
+    background-color: #b37820;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     display: flex;
     flex-direction: row;
-    }
-    .todo-list-item form {
+}
+
+.todo-list-item form {
     width: 100%;
     display: flex;
-    }
-    .todo-list-item input {
+}
+
+.todo-list-item input {
     flex-grow: 2;
     margin-right: 20px;
     border: none;
     border-radius: 5px;
-    font-family: 'Candal', sans-serif;
-    }
-    .todo-list-item button {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.todo-list-item button {
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     padding: 5px;
-    font-family: 'Candal', sans-serif;
-    background-color: rgb(51, 212, 100);
-    }
-    .todo-list-item .cancel {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #d56a0b;
+}
+
+.todo-list-item .cancel {
     color: white;
     text-decoration: none;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     padding: 5px;
-    font-family: 'Candal', sans-serif;
-    background-color: rgb(223, 43, 43);
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FF0000;
     margin-left: 5px;
-    }
-    .todo-list-item div {
+}
+
+.todo-list-item div {
     flex-grow: 2;
-    }
-    .todo-list-item .edit {
-    color : rgb(143, 233, 58);
+}
+
+.todo-list-item .edit {
+    color: #8FE93A;
     margin-right: 10px;
-    cursor:pointer;
+    cursor: pointer;
     text-decoration: none;
-    }
-    .todo-list-item .remove {
-    color : rgb(243, 96, 96);
+}
+
+.todo-list-item .remove {
+    color: #F36060;
     margin-right: 5px;
-    cursor:pointer;
+    cursor: pointer;
     text-decoration: none;
-    }
+}
